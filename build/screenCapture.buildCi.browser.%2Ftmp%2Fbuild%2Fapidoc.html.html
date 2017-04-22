@@ -1,0 +1,327 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://agnat.github.com/node_mdns">mdns (v2.3.3)</a>
+</h1>
+<h4>multicast DNS service discovery</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mdns">module mdns</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mdns.</span>lcov</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mdns.</span>obj</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mdns.</span>service_type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mdns.lcov">module mdns.lcov</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mdns.lcov.LcovLoader">
+            function <span class="apidocSignatureSpan">mdns.lcov.</span>LcovLoader
+            <span class="apidocSignatureSpan">(filefilter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mdns.lcov.infoFileToJson">
+            function <span class="apidocSignatureSpan">mdns.lcov.</span>infoFileToJson
+            <span class="apidocSignatureSpan">(filename, filefilter, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mdns.obj">module mdns.obj</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mdns.obj.union">
+            function <span class="apidocSignatureSpan">mdns.obj.</span>union
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mdns.service_type">module mdns.service_type</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mdns.service_type.ServiceType">
+            function <span class="apidocSignatureSpan">mdns.service_type.</span>ServiceType
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mdns.service_type.makeServiceType">
+            function <span class="apidocSignatureSpan">mdns.service_type.</span>makeServiceType
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mdns.service_type.protocolHelper">
+            function <span class="apidocSignatureSpan">mdns.service_type.</span>protocolHelper
+            <span class="apidocSignatureSpan">(protocol)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mdns" id="apidoc.module.mdns">module mdns</a></h1>
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mdns.lcov" id="apidoc.module.mdns.lcov">module mdns.lcov</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mdns.lcov.LcovLoader" id="apidoc.element.mdns.lcov.LcovLoader">
+        function <span class="apidocSignatureSpan">mdns.lcov.</span>LcovLoader
+        <span class="apidocSignatureSpan">(filefilter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LcovLoader(filefilter) {
+  this.tail = ''
+  this.result   = {
+      files: {}
+    , tests: {}
+    , functionCount: {}
+  }
+  this.testname = '';
+  this.filename = '';
+  this.filefilter = filefilter || function() { return true };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mdns.lcov.infoFileToJson" id="apidoc.element.mdns.lcov.infoFileToJson">
+        function <span class="apidocSignatureSpan">mdns.lcov.</span>infoFileToJson
+        <span class="apidocSignatureSpan">(filename, filefilter, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function infoFileToJson(filename, filefilter, cb) {
+  var input = fs.createReadStream(filename)
+  var parser = new LcovLoader(filefilter)
+  function process_lcov_chunk(chunk) { parser.consume(chunk); }
+  input.on('data', process_lcov_chunk);
+  input.on('end', function() {
+    //process.stdout.write(JSON.stringify(parser.result, null, 2));
+    cb(null, parser.result)
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mdns.obj" id="apidoc.module.mdns.obj">module mdns.obj</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mdns.obj.union" id="apidoc.element.mdns.obj.union">
+        function <span class="apidocSignatureSpan">mdns.obj.</span>union
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function union()  {
+  if (arguments.length &lt; 2) {
+    throw new Error('union() requires at least two arguments');
+  }
+  var result = {};
+  for (var i in arguments) {
+    for (var p in arguments[i]) {
+      result[p] = arguments[i][p];
+    }
+  }
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mdns.service_type" id="apidoc.module.mdns.service_type">module mdns.service_type</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mdns.service_type.ServiceType" id="apidoc.element.mdns.service_type.ServiceType">
+        function <span class="apidocSignatureSpan">mdns.service_type.</span>ServiceType
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ServiceType() {
+  this.name = '';
+  this.protocol = '';
+  this.subtypes = [];
+
+  var args;
+  if (arguments.length === 1) {
+    args = Array.isArray(arguments[0]) ? arguments[0] : [arguments[0]];
+  } else if (arguments.length &gt; 1) {
+    args = Array.prototype.slice.call(arguments);
+  }
+  if (args) {
+    if (args.length === 1) {
+      if (typeof args[0] === 'string') {
+        this.fromString(args[0]);
+      } else if (Array.isArray(args[0])) {
+        this.fromArray(args[0]);
+      } else if (typeof args[0] === 'object') {
+        this.fromJSON(args[0]);
+      } else {
+        throw new Error('argument must be a string, array or object');
+      }
+    } else if (args.length &gt;= 2) {
+      this.fromArray(args);
+    } else { // zero arguments
+      // uninitialized ServiceType ... fine with me
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mdns.service_type.makeServiceType" id="apidoc.element.mdns.service_type.makeServiceType">
+        function <span class="apidocSignatureSpan">mdns.service_type.</span>makeServiceType
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function makeServiceType() {
+  if (arguments.length === 1 &amp;&amp; arguments[0] instanceof ServiceType) {
+    return arguments[0];
+  }
+  return new ServiceType(Array.prototype.slice.call(arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mdns.service_type.protocolHelper" id="apidoc.element.mdns.service_type.protocolHelper">
+        function <span class="apidocSignatureSpan">mdns.service_type.</span>protocolHelper
+        <span class="apidocSignatureSpan">(protocol)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function protocolHelper(protocol) {
+  return function() {
+    var args = Array.prototype.slice.call(arguments);
+    if (isProtocol(args[1])) {
+      throw new Error("duplicate protocol '" + args[1] + "' in arguments");
+    }
+    args.splice(1,0, protocol);
+    return exports.makeServiceType.apply(this, args);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
